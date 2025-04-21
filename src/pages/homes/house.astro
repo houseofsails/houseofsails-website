@@ -1,0 +1,144 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+
+import { headerData } from '~/navigation';
+import FAQs from '~/components/widgets/FAQs.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPostsHero.astro';
+import BlogHighlightedPosts from '~/components/widgets/BlogHighlightedPosts.astro';
+import BlogCategoryPosts from '~/components/widgets/BlogCategoryPosts.astro';
+
+const metadata = {
+  title: 'Luxury Cruising & Sailing Magazine',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header
+      {...headerData}
+      actions={[
+        {
+          variant: 'secondary',
+          text: 'Start Your Adventure',
+          href: '/contact',
+        },
+      ]}
+      isSticky
+    />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Explore. Dream. Discover."
+  >
+    <Fragment slot="title">
+      House Of Sails
+    </Fragment>
+  </Hero2>
+
+  <!-- BlogLatestPost Widget **************** -->
+
+  <BlogLatestPosts
+    id="blog"
+    title="Top Stories"
+    linkText="View all stories"
+    count={3}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
+
+   <!-- BlogCategoryPosts Widget **************** -->
+
+  <BlogCategoryPosts
+  id="category"
+  title="Yachts"
+  linkText="View more Yachts"
+  category="documentation"
+  >
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+
+  </BlogCategoryPosts>
+
+  <BlogCategoryPosts
+  id="category"
+  title="Equipment"
+  linkText="View more Equipment"
+  category="resources"
+  >
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+
+  </BlogCategoryPosts>
+
+   <BlogCategoryPosts
+  id="category"
+  title="Featured"
+  linkText="View more Featured Posts"
+  category="documentation"
+  >
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+
+  </BlogCategoryPosts>
+
+  <BlogCategoryPosts
+  id="category"
+  title="Lifestyle"
+  linkText="View more Lifestyle"
+  category="stuff"
+  >
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+
+  </BlogCategoryPosts>
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    items={[
+      {
+        title: 'Does the new Catamaran 430 live up to the hype?',
+        description:
+          'Find out what real cat owners are really saying about the most sustainable boat on the water.',
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: 'The best Lifepo4 batteries for cruisers',
+        description: `How to safely navigate your LifePo4 battery installation.`,
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: 'Life on the hook',
+        description:
+          'Which anchor should you buy for a peaceful nights sleep?',
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: 'Skype meetings with the office at sea',
+        description: `What do the new Starlink plans mean for your offshore business?`,
+        icon: 'tabler:chevrons-right',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </FAQs>
+
+</Layout>
